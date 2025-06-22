@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import logging
+import sys
 
 from grpc import insecure_channel
 
