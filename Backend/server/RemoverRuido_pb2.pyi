@@ -4,14 +4,16 @@ from typing import ClassVar as _ClassVar, Optional as _Optional
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
-class HelloRequest(_message.Message):
-    __slots__ = ("name",)
-    NAME_FIELD_NUMBER: _ClassVar[int]
-    name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
+class ReduceRequest(_message.Message):
+    __slots__ = ("audio", "rate")
+    AUDIO_FIELD_NUMBER: _ClassVar[int]
+    RATE_FIELD_NUMBER: _ClassVar[int]
+    audio: bytes
+    rate: int
+    def __init__(self, audio: _Optional[bytes] = ..., rate: _Optional[int] = ...) -> None: ...
 
-class HelloReply(_message.Message):
-    __slots__ = ("message",)
-    MESSAGE_FIELD_NUMBER: _ClassVar[int]
-    message: str
-    def __init__(self, message: _Optional[str] = ...) -> None: ...
+class ReduceReply(_message.Message):
+    __slots__ = ("audio",)
+    AUDIO_FIELD_NUMBER: _ClassVar[int]
+    audio: bytes
+    def __init__(self, audio: _Optional[bytes] = ...) -> None: ...

@@ -25,9 +25,8 @@ if _version_not_supported:
     )
 
 
-class GreeterStub(object):
-    """The greeting service definition.
-    """
+class ReduceNoiseStub(object):
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -35,78 +34,43 @@ class GreeterStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.SayHello = channel.unary_unary(
-                '/removerruido.Greeter/SayHello',
-                request_serializer=RemoverRuido__pb2.HelloRequest.SerializeToString,
-                response_deserializer=RemoverRuido__pb2.HelloReply.FromString,
-                _registered_method=True)
-        self.SayHelloStreamReply = channel.unary_stream(
-                '/removerruido.Greeter/SayHelloStreamReply',
-                request_serializer=RemoverRuido__pb2.HelloRequest.SerializeToString,
-                response_deserializer=RemoverRuido__pb2.HelloReply.FromString,
-                _registered_method=True)
-        self.SayHelloBidiStream = channel.stream_stream(
-                '/removerruido.Greeter/SayHelloBidiStream',
-                request_serializer=RemoverRuido__pb2.HelloRequest.SerializeToString,
-                response_deserializer=RemoverRuido__pb2.HelloReply.FromString,
+        self.NoiseReducer = channel.unary_unary(
+                '/removerruido.ReduceNoise/NoiseReducer',
+                request_serializer=RemoverRuido__pb2.ReduceRequest.SerializeToString,
+                response_deserializer=RemoverRuido__pb2.ReduceRequest.FromString,
                 _registered_method=True)
 
 
-class GreeterServicer(object):
-    """The greeting service definition.
-    """
+class ReduceNoiseServicer(object):
+    """Missing associated documentation comment in .proto file."""
 
-    def SayHello(self, request, context):
-        """Sends a greeting
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SayHelloStreamReply(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def SayHelloBidiStream(self, request_iterator, context):
+    def NoiseReducer(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_GreeterServicer_to_server(servicer, server):
+def add_ReduceNoiseServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'SayHello': grpc.unary_unary_rpc_method_handler(
-                    servicer.SayHello,
-                    request_deserializer=RemoverRuido__pb2.HelloRequest.FromString,
-                    response_serializer=RemoverRuido__pb2.HelloReply.SerializeToString,
-            ),
-            'SayHelloStreamReply': grpc.unary_stream_rpc_method_handler(
-                    servicer.SayHelloStreamReply,
-                    request_deserializer=RemoverRuido__pb2.HelloRequest.FromString,
-                    response_serializer=RemoverRuido__pb2.HelloReply.SerializeToString,
-            ),
-            'SayHelloBidiStream': grpc.stream_stream_rpc_method_handler(
-                    servicer.SayHelloBidiStream,
-                    request_deserializer=RemoverRuido__pb2.HelloRequest.FromString,
-                    response_serializer=RemoverRuido__pb2.HelloReply.SerializeToString,
+            'NoiseReducer': grpc.unary_unary_rpc_method_handler(
+                    servicer.NoiseReducer,
+                    request_deserializer=RemoverRuido__pb2.ReduceRequest.FromString,
+                    response_serializer=RemoverRuido__pb2.ReduceRequest.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'removerruido.Greeter', rpc_method_handlers)
+            'removerruido.ReduceNoise', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('removerruido.Greeter', rpc_method_handlers)
+    server.add_registered_method_handlers('removerruido.ReduceNoise', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class Greeter(object):
-    """The greeting service definition.
-    """
+class ReduceNoise(object):
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def SayHello(request,
+    def NoiseReducer(request,
             target,
             options=(),
             channel_credentials=None,
@@ -119,63 +83,9 @@ class Greeter(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/removerruido.Greeter/SayHello',
-            RemoverRuido__pb2.HelloRequest.SerializeToString,
-            RemoverRuido__pb2.HelloReply.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def SayHelloStreamReply(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_stream(
-            request,
-            target,
-            '/removerruido.Greeter/SayHelloStreamReply',
-            RemoverRuido__pb2.HelloRequest.SerializeToString,
-            RemoverRuido__pb2.HelloReply.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def SayHelloBidiStream(request_iterator,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.stream_stream(
-            request_iterator,
-            target,
-            '/removerruido.Greeter/SayHelloBidiStream',
-            RemoverRuido__pb2.HelloRequest.SerializeToString,
-            RemoverRuido__pb2.HelloReply.FromString,
+            '/removerruido.ReduceNoise/NoiseReducer',
+            RemoverRuido__pb2.ReduceRequest.SerializeToString,
+            RemoverRuido__pb2.ReduceRequest.FromString,
             options,
             channel_credentials,
             insecure,

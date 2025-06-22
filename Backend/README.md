@@ -31,5 +31,5 @@ python greeter_client.py
 Rebuild:
 
 `
-python -m grpc_tools.protoc -I../../protos --python_out=. --pyi_out=. --grpc_python_out=. ../../protos/helloworld.proto
+python -m grpc_tools.protoc -I./Backend/protos --python_out=. --pyi_out=. --grpc_python_out=. ./Backend/protos/RemoverRuido.proto
 `

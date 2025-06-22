@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12RemoverRuido.proto\x12\x0cremoverruido\"\x1c\n\x0cHelloRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x1d\n\nHelloReply\x12\x0f\n\x07message\x18\x01 \x01(\t2\xf0\x01\n\x07Greeter\x12\x42\n\x08SayHello\x12\x1a.removerruido.HelloRequest\x1a\x18.removerruido.HelloReply\"\x00\x12O\n\x13SayHelloStreamReply\x12\x1a.removerruido.HelloRequest\x1a\x18.removerruido.HelloReply\"\x00\x30\x01\x12P\n\x12SayHelloBidiStream\x12\x1a.removerruido.HelloRequest\x1a\x18.removerruido.HelloReply\"\x00(\x01\x30\x01\x42:\n\x1dio.grpc.examples.removerruidoB\x11RemoverRuidoProtoP\x01\xa2\x02\x03HLWb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12RemoverRuido.proto\x12\x0cremoverruido\",\n\rReduceRequest\x12\r\n\x05\x61udio\x18\x01 \x01(\x0c\x12\x0c\n\x04rate\x18\x02 \x01(\x05\"\x1c\n\x0bReduceReply\x12\r\n\x05\x61udio\x18\x01 \x01(\x0c\x32Y\n\x0bReduceNoise\x12J\n\x0cNoiseReducer\x12\x1b.removerruido.ReduceRequest\x1a\x1b.removerruido.ReduceRequest\"\x00\x42:\n\x1dio.grpc.examples.removerruidoB\x11RemoverRuidoProtoP\x01\xa2\x02\x03HLWb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +32,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'RemoverRuido_pb2', _globals
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\035io.grpc.examples.removerruidoB\021RemoverRuidoProtoP\001\242\002\003HLW'
-  _globals['_HELLOREQUEST']._serialized_start=36
-  _globals['_HELLOREQUEST']._serialized_end=64
-  _globals['_HELLOREPLY']._serialized_start=66
-  _globals['_HELLOREPLY']._serialized_end=95
-  _globals['_GREETER']._serialized_start=98
-  _globals['_GREETER']._serialized_end=338
+  _globals['_REDUCEREQUEST']._serialized_start=36
+  _globals['_REDUCEREQUEST']._serialized_end=80
+  _globals['_REDUCEREPLY']._serialized_start=82
+  _globals['_REDUCEREPLY']._serialized_end=110
+  _globals['_REDUCENOISE']._serialized_start=112
+  _globals['_REDUCENOISE']._serialized_end=201
 # @@protoc_insertion_point(module_scope)

@@ -7,22 +7,18 @@ option objc_class_prefix = "HLW";
 
 package removerruido;
 
-// The greeting service definition.
-service Greeter {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
 
-  rpc SayHelloStreamReply (HelloRequest) returns (stream HelloReply) {}
-
-  rpc SayHelloBidiStream (stream HelloRequest) returns (stream HelloReply) {}
+service ReduceNoise {
+  rpc NoiseReducer (ReduceRequest) returns (ReduceRequest) {}
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
+// O pedido com o audio e o frequencia dele.
+message ReduceRequest {
+  bytes audio = 1;
+  int32 rate = 2;
 }
 
-// The response message containing the greetings
-message HelloReply {
-  string message = 1;
+// A resposta com o audio tendo menos ruído.
+message ReduceReply {
+  bytes audio = 1;
 }
